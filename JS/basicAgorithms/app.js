@@ -57,7 +57,8 @@ const car2 = {name: 'Chevrolet Corbina', basePrice: 70000, finalPrice: 80000};
 const character = { name: "Jack Sparrow", age: 10 };
 //!---------------------------------------------------------------------------
 
-character.age = 25;
+character.age += z;
+console.log(character);
 
 //!---------------------------------------------------------------------------
 //? 2.2 Declara 3 variables con los nombres y valores siguientes
@@ -113,7 +114,10 @@ let priceCar1 = car1.basePrice + globalBasePrice;
 console.log(priceCar1);
 let priceCar2 = car2.basePrice + globalBasePrice;
 console.log(priceCar2);
-
+car1.finalPrice = priceCar1;
+car2.finalPrice = priceCar2;
+console.log(car1);
+console.log(car2);
 /***Iteración #3: Operadores**
 
 ```jsx
@@ -311,3 +315,55 @@ if (number2 / 2 === number1 || number1 / 5 === number3) {
     "number2 entre 2 es igual a number1 O number1 entre 5 es igual a number3"
   );
 }
+
+/***Iteración #6: Bucles**
+
+```jsx
+
+6.1 Crea un bucle for que vaya desde 0 a 9 y muestralo por consola.
+
+6.2 Crea un bucle for que vaya desde 0 a 9 y muestralo por consola solo
+cuando el resto del numero dividido entre 2 sea 0.
+
+6.3 Crea un bucle para conseguir dormir contando ovejas.
+Este bucle tiene que dar 10 vueltas, es decir, 10 console.log.
+Muestra por consola un mensaje diciendo 'Intentando dormir 🐑' en cada vuelta del bucle
+y cambia el mensaje en la décima vuelta a 'Dormido!'.*/
+
+//!--------------------------------------------------------------------------------------------
+
+//? 6.1 Crea un bucle for que vaya desde 0 a 9 y muestralo por consola.
+
+//!--------------------------------------------------------------------------------------------
+
+for (let serie = 0; serie <= 9; serie++) {
+  console.log(serie);
+}
+
+//!--------------------------------------------------------------------------------------------
+
+//? 6.2 Crea un bucle for que vaya desde 0 a 9 y muestralo por consola solo
+//? cuando el resto del numero dividido entre 2 sea 0.
+
+//!--------------------------------------------------------------------------------------------
+
+for (let serie = 0; serie <= 9; serie++)
+  if (serie / 2 === 0) {
+    console.log(serie);
+  }
+
+//!--------------------------------------------------------------------------------------------
+
+//? 6.3 Crea un bucle para conseguir dormir contando ovejas.
+//? Este bucle tiene que dar 10 vueltas, es decir, 10 console.log.
+//? Muestra por consola un mensaje diciendo 'Intentando dormir 🐑' en cada vuelta del bucle
+//? y cambia el mensaje en la décima vuelta a 'Dormido!'.*/
+
+//!--------------------------------------------------------------------------------------------
+
+for (let serie = 0; serie <= 9; serie++)
+  if (serie <= 8) {
+    console.log("Intentando dormir 🐑");
+  } else {
+    console.log("Dormido!");
+  }
