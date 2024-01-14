@@ -5,3 +5,10 @@ for (let index = 0; index < numberList.length; index++) {
     console.log("Dicen que da mala suerte 👹");
   }
 }
+let soeder = "Stefan";
+function showSoeder() {
+  let soeder = "Sebastian";
+  let message = "Hi" + soeder;
+}
+console.log(showSoeder);
+console.log(soeder);
