@@ -48,3 +48,6 @@ if (hasRing === true) {
 } else {
   console.log("Legolas es un guerrero valiente");
 }
+
+/***********************************************************************************/
+
