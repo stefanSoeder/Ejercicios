@@ -1,15 +1,32 @@
-function suma(a, b) {
+/*function suma(a, b) {
   return a + b;
 }
 
-let resultado = suma(3, 4); // resultado = 7
+let resultado = suma(3, 4);*/ //* resultado = 7*/
 
-console.log(resultado);
-const flecha = (c, d) => c + d;
-console.log(flecha);
+function calcularDeudaTotal(
+  montoPorMes,
+  numeroDeMeses,
+  montoAdicional,
+  montoPagado
+) {
+  // Calcular la deuda total
+  const deudaTotal = montoPorMes * numeroDeMeses + montoAdicional - montoPagado;
 
-let iName = "Roberto";
-let lastName = "Lopez";
-flecha(iName, lastName);
-const nombreCompleto = flecha(iName, lastName);
-console.log(nombreCompleto);
+  return deudaTotal;
+}
+
+// Ejemplo de uso
+const montoPorMes = 9;
+const numeroDeMeses = 17;
+const montoAdicional = 110;
+const montoPagado = 50;
+
+const resultadoDeuda = calcularDeudaTotal(
+  montoPorMes,
+  numeroDeMeses,
+  montoAdicional,
+  montoPagado
+);
+
+console.log(`La deuda total es: ${resultadoDeuda}€`);

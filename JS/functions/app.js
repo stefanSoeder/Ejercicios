@@ -29,8 +29,7 @@ console.log(bigger);
 /*Completa la función que tomando un array de strings como argumento devuelva el más largo,
 en caso de que dos strings tenga la misma longitud deberá devolver el primero.
 
-Puedes usar este array para probar tu función:
-
+Puedes usar este array para probar tu función:*/
 
 const avengers = [
   "Hulk",
@@ -40,4 +39,11 @@ const avengers = [
   "Spiderman",
   "Captain M.",
 ];
-const findLongestWord = (avengers) */
+const findLongestWord = (avengers) => {
+  for (let i = 0; i <= avengers.length; i++)
+    if (i.length >= i++) {
+      console.log(i);
+    } else console.log(i++);
+};
+const longestAvenger = findLongestWord(avengers);
+console.log(longestAvenger);

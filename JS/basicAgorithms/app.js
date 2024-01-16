@@ -28,6 +28,7 @@ let y = 10;
 //!-----------------------------------------------------------------
 
 let z = h + y;
+console.log("🚀 ~ z:", z);
 
 /* 2.1 Dado el siguiente javascript, cambia el valor de la propiedad age a 25.
 const character = {name: 'Jack Sparrow', age: 10};
@@ -72,18 +73,9 @@ console.log(character);
 let firstName = "Jon";
 let lastName = "Snow";
 let age = 24;
-let concatena =
-  "Soy" +
-  " " +
-  firstName +
-  " " +
-  lastName +
-  " " +
-  "tengo" +
-  age +
-  " " +
-  "y me gustan los lobos";
+let concatena = `Soy ${firstName} ${lastName} tengo ${age} años, y me gustan los lobos.`;
 console.log(concatena);
+console.log("🚀 ~ concatena:", concatena);
 
 //!-------------------------------------------------------------------------------
 //? 2.3 Dado el siguiente javascript, imprime con un console.log la suma del precio de
@@ -95,7 +87,7 @@ console.log(concatena);
 const toy1 = { name: "Buss myYear", price: 19 };
 const toy2 = { name: "Rallo mcKing", price: 29 };
 let suma = toy1.price + toy2.price;
-console.log(suma);
+console.log("🚀 ~ suma:", suma);
 
 //!--------------------------------------------------------------------------------------------
 //? 2.4 Dado el siguiente javascript, actualiza el valor de la variable globalBasePrice a 25000
@@ -107,17 +99,15 @@ console.log(suma);
 
 //!-------------------------------------------------------------------------------------------
 
-let globalBasePrice = 25000;
+let globalBasePrice = 10000;
 const car1 = { name: "BMW m&m", basePrice: 50000, finalPrice: 50000 };
 const car2 = { name: "Chevrolet Corbina", basePrice: 70000, finalPrice: 80000 };
-let priceCar1 = car1.basePrice + globalBasePrice;
-console.log(priceCar1);
-let priceCar2 = car2.basePrice + globalBasePrice;
-console.log(priceCar2);
-car1.finalPrice = priceCar1;
-car2.finalPrice = priceCar2;
-console.log(car1);
-console.log(car2);
+globalBasePrice = 25000;
+car1.finalPrice = globalBasePrice + car1.basePrice;
+console.log("🚀 ~ car1.finalPrice:", car1.finalPrice);
+car2.finalPrice = globalBasePrice + car2.basePrice;
+console.log("🚀 ~ car2.finalPrice:", car2.finalPrice);
+
 /***Iteración #3: Operadores**
 
 ```jsx
@@ -239,6 +229,7 @@ console.log(avengers);
 //!--------------------------------------------------------------------------------------------
 
 console.log(avengers.length);
+console.log(`Prueba`, avengers[0].length);
 
 //!--------------------------------------------------------------------------------------------
 
@@ -250,7 +241,7 @@ console.log(avengers.length);
 
 const rickAndMortyCharacters = ["Rick", "Beth", "Jerry"];
 rickAndMortyCharacters.push("Morty", "Summer");
-console.log(rickAndMortyCharacters);
+console.log("🚀 ~ rickAndMortyCharacters:", rickAndMortyCharacters);
 
 //!--------------------------------------------------------------------------------------------
 
@@ -261,7 +252,7 @@ console.log(rickAndMortyCharacters);
 
 rickAndMortyCharacters.push("Lapiz Lopez");
 rickAndMortyCharacters.pop();
-console.log(rickAndMortyCharacters);
+console.log("pp", rickAndMortyCharacters[0], rickAndMortyCharacters[4]);
 
 //!--------------------------------------------------------------------------------------------
 
@@ -271,7 +262,7 @@ console.log(rickAndMortyCharacters);
 //!--------------------------------------------------------------------------------------------
 
 rickAndMortyCharacters.push("Lapiz Lopez");
-rickAndMortyCharacters.splice(1, 1);
+rickAndMortyCharacters.slice(1);
 console.log(rickAndMortyCharacters);
 
 /**Iteración #5: Condicionales**
