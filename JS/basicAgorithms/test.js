@@ -1,14 +1,30 @@
-let numberList = [1, 2, 3, 4, 7, 8, 10, 13];
+const comidas = ["sandia", "paella", "lentejas", "ensalada"];
 
-for (let index = 0; index < numberList.length; index++) {
-  if (numberList[index] === 13) {
-    console.log("Dicen que da mala suerte 👹");
+const buscadorDeComidas = (arrayDeComidas, comidaABuscar) => {
+  let acc = 0;
+  for (let i = 0; i < arrayDeComidas.length; i++) {
+    arrayDeComidas[i].toLowerCase().trim() ===
+      comidaABuscar.toLowerCase().trim() && acc++;
   }
-}
-let soeder = "Stefan";
-function showSoeder() {
-  let soeder = "Sebastian";
-  let message = "Hi" + soeder;
-}
-console.log(showSoeder);
-console.log(soeder);
+
+  return acc === 0
+    ? `No se enuentra la comida`
+    : `La comida se encuentra con el numero de veces:${acc}`;
+};
+const resultadoDeBusqueda = buscadorDeComidas(comidas, "  paeLLa  ");
+console.log("🚀 ~ resultadoDeBusqueda:", resultadoDeBusqueda);
+
+const alumno = {
+  name: "barbara",
+  CP: 28003,
+};
+
+const buscadorCPalumno = (cp, alumnos) => {
+  for (let clave in alumno) {
+    if (clave == "CP") {
+      return alumno[clave] === cp ? true : false;
+    }
+  }
+};
+const forInCP = buscadorCPalumno(28029, alumno);
+console.log("🚀 ~ forInCP:", forInCP);

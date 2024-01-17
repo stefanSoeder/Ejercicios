@@ -252,7 +252,11 @@ console.log("🚀 ~ rickAndMortyCharacters:", rickAndMortyCharacters);
 
 rickAndMortyCharacters.push("Lapiz Lopez");
 rickAndMortyCharacters.pop();
-console.log("pp", rickAndMortyCharacters[0], rickAndMortyCharacters[4]);
+console.log(
+  "pp",
+  rickAndMortyCharacters[0],
+  rickAndMortyCharacters[rickAndMortyCharacters.length - 1]
+);
 
 //!--------------------------------------------------------------------------------------------
 
