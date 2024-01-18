@@ -13,15 +13,14 @@ const sum = (numberOne, numberTwo) => {
   let biggest;
   if (numberOne > numberTwo) {
     biggest = numberOne;
-    // insert code
   } else {
     biggest = numberTwo;
   }
-  console.log(biggest);
+  return biggest;
 };
 sum(1, 2);
 
-/*const bigger = sum(1, 2);
+const bigger = sum(1, 2);
 console.log(bigger);
 
 //!---------------------------------------------
@@ -43,13 +42,50 @@ const avengers = [
 ];
 
 const findLongestWord = (arrayAvengers) => {
-  let acc = 0;
-  for (let i = 0; i <= arrayAvengers.length; i++){
-    arrayAvengers[i].length < avenger.length&&acc++} {return acc=}
+  let longestWord = "";
+  for (let i = 0; i < arrayAvengers.length; i++) {
+    if (arrayAvengers[i].length > longestWord.length) {
+      longestWord = arrayAvengers[i];
     }
-  
+  }
+  return longestWord;
 };
-findLongestWord(avengers);
+let longestAvenger = findLongestWord(avengers);
+console.log("🚀 ~ longestAvenger:", longestAvenger);
 
+//!-----------------------------------
+//? **Iteración #3: Calcular la suma**
+//!-----------------------------------
 
+/*Calcular una suma puede ser tan simple como iterar sobre un array y sumar cada uno de los elementos.
+Implemente la función denominada sumNumbers que toma un array de números como argumento y devuelve la suma de 
+todos los números de la matriz.
+
+Puedes usar este array para probar tu función:
+
+```jsx
+const numbers = [1, 2, 3, 5, 45, 37, 58];
+
+function sumAll(param) {
+  // insert code
+}
 ```*/
+
+const numbers = [1, 2, 3, 5, 45, 37, 58];
+
+const adicion = numbers.reduce(
+  (accumulator, currentValue) => accumulator + currentValue
+);
+console.log(adicion);
+let adicionTotal = adicion(numbers);
+
+//!---------------------------------------
+//? **Iteración #4: Calcular el promedio**
+//!---------------------------------------
+Calcular un promedio es una tarea extremadamente común. Puedes usar este array para probar tu función:
+
+```jsx
+const numbers = [12, 21, 38, 5, 45, 37, 6];
+function average(param) {
+  // insert code
+}
