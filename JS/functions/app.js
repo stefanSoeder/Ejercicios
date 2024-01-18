@@ -77,15 +77,34 @@ const adicion = numbers.reduce(
   (accumulator, currentValue) => accumulator + currentValue
 );
 console.log(adicion);
-let adicionTotal = adicion(numbers);
 
 //!---------------------------------------
 //? **Iteración #4: Calcular el promedio**
 //!---------------------------------------
-Calcular un promedio es una tarea extremadamente común. Puedes usar este array para probar tu función:
+/*Calcular un promedio es una tarea extremadamente común. Puedes usar este array para probar tu función:
 
 ```jsx
 const numbers = [12, 21, 38, 5, 45, 37, 6];
 function average(param) {
   // insert code
-}
+}*/
+const promNumbers = [12, 21, 38, 5, 45, 37, 6];
+const average =
+  promNumbers.reduce(
+    (accumlator, currentValue) => accumlator + currentValue / promNumbers.length
+  ) / promNumbers.length;
+console.log("🚀 ~ average:", average);
+
+//!-----------------------------------------------
+//? **Iteración #5: Calcular promedio de strings**
+//!-----------------------------------------------
+
+/*Crea una función que reciba por parámetro un array y cuando es un valor number lo sume y de lo contrario cuente la longitud del string y lo sume. Puedes usar este array para probar tu función:
+
+```jsx
+const mixedElements = [6, 1, "Rayo", 1, "vallecano", "10", "upgrade", 8, "hub"];
+function averageWord(param) {
+  // insert code
+}*/
+
+const mixedElements = [6, 1, "Rayo", 1, "vallecano", "10", "upgrade", 8, "hub"];
