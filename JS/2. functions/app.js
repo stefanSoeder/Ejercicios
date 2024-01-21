@@ -112,7 +112,7 @@ const mixedElements = [6, 1, "Rayo", 1, "vallecano", "10", "upgrade", 8, "hub"];
 let pStrings = (mixedArray) => {
   let acc = 0;
   for (let i = 0; i < mixedArray.length; i++)
-    if (mixedArray[i] instanceof NaN) {
+    if (mixedArray[i] !== Number) {
       mixedArray[i] = mixedArray[i].length;
     }
 };
