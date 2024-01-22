@@ -73,6 +73,57 @@ console.log(parseFloat("235523.12352234"));
 console.log(numberRandom.toString());
 
 let prueba = "menu";
-if (prueba.isNaN === true) {
+if ((prueba.isNaN = true)) {
   console.log("funciona");
 }
+let concatena = "school" + 5 + 5;
+
+const colores = ["rojo", "verde", "azul"];
+const [primerColor, segundoColor, tercerColor] = colores;
+console.log(primerColor); // imprime 'rojo'
+console.log(segundoColor); // imprime 'verde'
+console.log(tercerColor); // imprime 'azul'
+const persona = {
+  nombre: "Juan",
+  edad: 30,
+  direccion: {
+    ciudad: "Bogotá",
+    pais: "Colombia",
+  },
+};
+
+const {
+  nombre,
+  edad,
+  direccion: { ciudad },
+} = persona;
+console.log(nombre); // imprime 'Juan'
+console.log(edad); // imprime 30
+console.log(ciudad); // imprime 'Bogotá'
+
+const movie = {
+  title: "Avatar",
+  director: "James Cameron",
+  year: 2009,
+  city: {
+    spain: "Almeria",
+    eeuu: "New York",
+  },
+};
+
+const copyMovie = movie;
+
+copyMovie.title = "TITANIC";
+console.log("🚀 ~ copyMovie:", copyMovie);
+console.log("🚀 ~ movie:", movie);
+
+const copySpread = { ...movie };
+copySpread.title = "Dora";
+console.log("🚀 ~ copySpread:", copySpread);
+console.log("🚀 ~ movie:", movie);
+
+const numbers = [1, 2, 3, 4, 5];
+
+const doubledNumbers = numbers.map((number) => number * 2);
+
+console.log(doubledNumbers); // [2, 4, 6, 8, 10]

@@ -1,13 +1,11 @@
-//!------------------------------------
+//!----------------------------------
 
 //? Iteración #1: Buscar el máximo**
+//!----------------------------------
+// //?Completa la función que tomando dos números como argumento devuelva el más alto.
 
-//?Completa la función que tomando dos números como argumento devuelva el más alto.
-
-//?```jsx
-//?function sum(numberOne, numberTwo) {
-
-//!-----------------------------------------
+// //?```jsx
+// //?function sum(numberOne, numberTwo) {
 
 const sum = (numberOne, numberTwo) => {
   let biggest;
@@ -108,14 +106,45 @@ function averageWord(param) {
   // insert code
 }*/
 
-const mixedElements = [6, 1, "Rayo", 1, "vallecano", "10", "upgrade", 8, "hub"];
+/*const mixedElements = [6, 1, "Rayo", 1, "vallecano", "10", "upgrade", 8, "hub"];
 let pStrings = (mixedArray) => {
   let acc = 0;
-  for (let i = 0; i < mixedArray.length; i++)
-    if (mixedArray[i] !== Number) {
-      mixedArray[i] = mixedArray[i].length;
+  for (let i = 0; i < mixedArray.length; i++) {
+    if (mixedArray[i] instanceof Number) {
+      acc = mixedArray[i];
+    } else {
+      acc = mixedArray[i].length;
     }
+  } const add = 
 };
-pStrings(mixedElements);
-let notNumbers = pStrings(mixedElements);
-console.log("🚀 ~ notNumbers:", notNumbers);
+let conversion = pStrings(mixedElements);
+console.log("🚀 ~ conversion:", conversion); */
+
+//!---------------------------------
+//? **Iteración #6: Valores Únicos**
+//!---------------------------------
+
+// Crea una función que reciba por parámetro un array
+// y compruebe si existen elementos duplicados,
+// en caso que existan los elimina para retornar un array sin los elementos duplicados.
+// Puedes usar este array para probar tu función:
+
+const duplicates = [
+  "sushi",
+  "pizza",
+  "burger",
+  "potatoe",
+  "pasta",
+  "ice-cream",
+  "pizza",
+  "chicken",
+  "onion rings",
+  "pasta",
+  "soda",
+];
+
+let dupRemove = (dups) => {
+  dups.forEach((element) => {
+    console.log(element);
+  });
+};
