@@ -106,19 +106,20 @@ function averageWord(param) {
   // insert code
 }*/
 
-/*const mixedElements = [6, 1, "Rayo", 1, "vallecano", "10", "upgrade", 8, "hub"];
+const mixedElements = [6, 1, "Rayo", 1, "vallecano", "10", "upgrade", 8, "hub"];
 let pStrings = (mixedArray) => {
-  let acc = 0;
+  let acc = [];
   for (let i = 0; i < mixedArray.length; i++) {
-    if (mixedArray[i] instanceof Number) {
-      acc = mixedArray[i];
-    } else {
+    if (mixedArray[i] != Number) {
       acc = mixedArray[i].length;
+    } else {
+      acc = mixedArray[i];
     }
-  } const add = 
+  }
 };
-let conversion = pStrings(mixedElements);
-console.log("🚀 ~ conversion:", conversion); */
+
+const converse = pStrings(mixedElements);
+console.log("🚀 ~ converse:", converse);
 
 //!---------------------------------
 //? **Iteración #6: Valores Únicos**
@@ -143,8 +144,44 @@ const duplicates = [
   "soda",
 ];
 
-let dupRemove = (dups) => {
-  dups.forEach((element) => {
-    console.log(element);
-  });
+let singles = [];
+duplicates.forEach((item) => {
+  if (!singles.includes(item)) {
+    singles.push(item);
+  }
+});
+const notDuplicated = singles;
+console.log("🚀 ~ notDuplicated:", notDuplicated);
+
+//!------------------------------------
+//? Iteración #7: Buscador de nombres**
+//!------------------------------------
+
+// Crea una función que reciba por parámetro un array y el valor que desea
+// comprobar que existe dentro de dicho array - comprueba si existe el elemento,
+// en caso que existan nos devuelve un true y la posición de dicho elemento y por la contra un false.
+//Puedes usar este array para probar tu función:
+
+const namesss = [
+  "Peter",
+  "Steve",
+  "Tony",
+  "Natasha",
+  "Clint",
+  "Logan",
+  "Xabier",
+  "Bruce",
+  "Peggy",
+  "Jessica",
+  "Marc",
+];
+
+let nameFinder = (namesArray, nombre) => {
+  let resultado = namesArray.indexOf(nombre);
+  if (resultado === -1) {
+    return false;
+  } else {
+    return { existeNombre: true, resultado: resultado };
+  }
 };
+console.log(nameFinder(namesss, "Peter"));

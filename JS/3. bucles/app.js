@@ -40,11 +40,23 @@ const alumns = [
   { name: "Alfredo Blanco", T1: false, T2: false, T3: false },
   { name: "Raquel Benito", T1: true, T2: true, T3: true },
 ];
-
-alumns.forEach((alumns) => {
-  alumns.isApproved = true;
-});
-
+let evaluacion = (clase) => {
+  alumns.forEach((alumns) => {
+    let aprobados = 0;
+    for (let clave in alumn) {
+      if (alumn[clave] === true) {
+        aprobados++;
+      } else if (alumn[clave] === false) {
+        aprobados--;
+      }
+      if ((aprobados) => 2) {
+        isApproved: true;
+      } else {
+        isApproved: false;
+      }
+    }
+  });
+};
 console.log(alumns);
 
 //!--------------------------------
