@@ -57,7 +57,7 @@ let evaluacion = (clase) => {
     }
   });
 };
-console.log(alumns);
+alumns[indice].isApproved = 
 
 //!--------------------------------
 //? Iteración #3: Probando For...of
