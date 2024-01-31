@@ -40,6 +40,9 @@ const alumns = [
   { name: "Alfredo Blanco", T1: false, T2: false, T3: false },
   { name: "Raquel Benito", T1: true, T2: true, T3: true },
 ];
+alumns.forEach((alumns))=>{
+  alumns.isApproved=()
+}
 let evaluacion = (clase) => {
   alumns.forEach((alumns) => {
     let aprobados = 0;
