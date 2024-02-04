@@ -6,12 +6,17 @@ const User = require("../models/User.model");
 
 //! ---------------------------- utils ----------------------------------
 const randomCode = require("../../utils/randomCode");
+const sendEmail = require("../../utils/sendEmail");
 
 //! ------------------------------librerias--------------------------------
 const nodemailer = require("nodemailer");
 const validator = require("validator");
 const bcrypt = require("bcrypt");
 const dotenv = require("dotenv");
+const {
+  getTestEmailSend,
+  setTestEmailSend,
+} = require("../../state/state.data");
 dotenv.config();
 /**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -110,3 +115,63 @@ const registerLargo = async (req, res, next) => {
   }
 };
 module.exports = { registerLargo };
+
+//! -----------------------------------------------------------------------------
+//? ----------------------------REGISTER CORTO EN CODIGO ------------------------
+//! -----------------------------------------------------------------------------
+
+const register = async (req, res, next) => {
+  let catchImg = req.file?.path;
+  try {
+    await User.syncIndexes();
+    let confirmationCode = randomCode();
+    const { email, name } = req.body;
+
+    const userExist = await User.findOne(
+      { email: req.body.email },
+      { name: req.body.name }
+    );
+    if (!userExist) {
+      const newUser = new User({ ...req.body, confirmationCode });
+      if (req.file) {
+        newUser.image = req.file.path;
+      } else {
+        newUser.image = "https://pic.onlinewebfonts.com/svg/img_181369.png";
+      }
+
+      try {
+        const userSave = await newUser.save();
+
+        if (userSave) {
+          sendEmail(email, name, confirmationCode);
+          setTimeout(() => {
+            if (getTestEmailSend()) {
+              // el estado ya utilizado lo reinicializo a false
+              setTestEmailSend(false);
+              return res.status(200).json({
+                user: userSave,
+                confirmationCode,
+              });
+            } else {
+              setTestEmailSend(false);
+              return res.status(404).json({
+                user: userSave,
+                confirmationCode: "error, resend code",
+              });
+            }
+          }, 1100);
+        }
+      } catch (error) {
+        return res.status(404).json(error.message);
+      }
+    } else {
+      if (req.file) deleteImgCloudinary(catchImg);
+      return res.status(409).json("this user already exist");
+    }
+  } catch (error) {
+    if (req.file) deleteImgCloudinary(catchImg);
+    return next(error);
+  }
+};
+
+module.exports = { registerLargo, register };
