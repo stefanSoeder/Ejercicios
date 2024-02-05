@@ -6,6 +6,8 @@ const {
   sendCode,
   resendCode,
   checkNewUser,
+  login,
+  autoLogin,
 } = require("../controllers/User.controllers");
 const express = require(`express`);
 const UserRoutes = express.Router();
@@ -17,4 +19,7 @@ UserRoutes.get("/register", upload.single("image"), registerWithRedirect);
 UserRoutes.get("/register/sendMail/:id", sendCode);
 UserRoutes.post("/resend", resendCode);
 UserRoutes.post("/check", checkNewUser);
+UserRoutes.post("/login", login);
+UserRoutes.post("/login/autologin", autoLogin);
+
 module.exports = UserRoutes;

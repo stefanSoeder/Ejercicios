@@ -18,6 +18,7 @@ const {
   setTestEmailSend,
 } = require("../../state/state.data");
 const setError = require("../../helpers/handle-error");
+const { generateToken } = require("../../utils/token");
 dotenv.config();
 /**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -383,6 +384,62 @@ const checkNewUser = async (req, res, next) => {
   }
 };
 
+//! -----------------------------------------------------------------------------
+//? --------------------------------LOGIN ---------------------------------------
+//! -----------------------------------------------------------------------------
+
+const login = async (req, res, next) => {
+  try {
+    const { email, password } = req.body;
+    const userDB = await User.findOne({ email });
+
+    if (userDB) {
+      // compara dos contraseñar una sin encryptar y otra que si lo esta
+      if (bcrypt.compareSync(password, userDB.password)) {
+        const token = generateToken(userDB._id, email);
+        return res.status(200).json({
+          user: userDB,
+          token,
+        });
+      } else {
+        return res.status(404).json("password dont match");
+      }
+    } else {
+      return res.status(404).json("User no register");
+    }
+  } catch (error) {
+    return next(error);
+  }
+};
+
+//! -----------------------------------------------------------------------------
+//? --------------------------------AUTOLOGIN ---------------------------------------
+//! -----------------------------------------------------------------------------
+
+const autoLogin = async (req, res, next) => {
+  try {
+    const { email, password } = req.body;
+    const userDB = await User.findOne({ email });
+
+    if (userDB) {
+      // comparo dos contraseñas encriptadas
+      if (password == userDB.password) {
+        const token = generateToken(userDB._id, email);
+        return res.status(200).json({
+          user: userDB,
+          token,
+        });
+      } else {
+        return res.status(404).json("password dont match");
+      }
+    } else {
+      return res.status(404).json("User no register");
+    }
+  } catch (error) {
+    return next(error);
+  }
+};
+
 module.exports = {
   registerLargo,
   register,
@@ -390,4 +447,6 @@ module.exports = {
   registerWithRedirect,
   resendCode,
   checkNewUser,
+  login,
+  autoLogin,
 };
