@@ -27,6 +27,10 @@ app.listen(PORT, () =>
 
 const UserRoutes = require("./src/api/routes/User.routes");
 app.use("/api/v1/users/", UserRoutes);
+const BarRoutes = require("./src/api/routes/Bar.routes");
+app.use("/api/v1/bar/", BarRoutes);
+const BeerRoutes = require("./src/api/routes/Beer.routes");
+app.use("/api/v1/beer/", BeerRoutes);
 app.use("*", (req, res, next) => {
   const error = new Error("Route not found");
   error.status = 404;
