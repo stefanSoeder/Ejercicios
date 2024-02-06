@@ -722,6 +722,22 @@ const update = async (req, res, next) => {
   }
 };
 
+const deleteUser = async (req, res, next) => {
+  try {
+    const { _id, image } = req.user;
+    await User.findByIdAndDelete(_id);
+    if (await User.findById(_id)) {
+      // si el usuario
+      return res.status(404).json("not deleted"); ///
+    } else {
+      deleteImgCloudinary(image);
+      return res.status(200).json("ok delete");
+    }
+  } catch (error) {
+    return next(error);
+  }
+};
+
 module.exports = {
   registerLargo,
   register,
@@ -735,4 +751,5 @@ module.exports = {
   sendPassword,
   modifyPassword,
   update,
+  deleteUser,
 };
