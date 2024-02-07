@@ -30,6 +30,7 @@ const BeerSchema = new mongoose.Schema(
       required: true,
       trim: true,
       unique: true,
+      default: "none",
     },
     craftBeer: {
       type: Boolean,

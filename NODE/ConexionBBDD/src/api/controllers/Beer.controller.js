@@ -25,7 +25,7 @@ const createBeer = async (req, res, next) => {
       newBeer.image =
         "https://res.cloudinary.com/dhu1it9x8/image/upload/v1707250175/comida_lddnvo.png";
     }
-
+    console.log(newBeer);
     try {
       const saveBeer = await newBeer.save();
       if (saveBeer) {
@@ -34,6 +34,7 @@ const createBeer = async (req, res, next) => {
         return res.status(404).json("Not able to save new beer ❌");
       }
     } catch (error) {
+      console.log("🚀 ~ createBeer ~ error:", error);
       return res.status(404).json("error general saved beer");
     }
   } catch (error) {
