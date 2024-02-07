@@ -23,13 +23,11 @@ const BeerSchema = new mongoose.Schema(
       type: String,
       required: true,
       trim: true,
-      unique: true,
     },
     addedFlavours: {
       type: String,
       required: true,
       trim: true,
-      unique: true,
       default: "none",
     },
     craftBeer: {

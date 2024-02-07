@@ -48,4 +48,65 @@ const createBeer = async (req, res, next) => {
   }
 };
 
-module.exports = { createBeer };
+//!---------
+//?GET BY ID
+//!---------
+
+const getById = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const beerById = await Beer.findById(id);
+    if (beerById) {
+      return res.status(200).json(beerById);
+    } else {
+      return res.status(404).json("Beer not found");
+    }
+  } catch (error) {
+    return res.status(404).json(error.message);
+  }
+};
+
+//!-------
+//?GET ALL
+//!-------
+
+const getAll = async (req, res, next) => {
+  try {
+    const allBeer = await Beer.find().populate("bars");
+    /** el find nos devuelve un array */
+    if (allBeer.length > 0) {
+      return res.status(200).json(allBeer);
+    } else {
+      return res.status(404).json("No beers found");
+    }
+  } catch (error) {
+    return res.status(404).json({
+      error: "error al buscar - lanzado en el catch",
+      message: error.message,
+    });
+  }
+};
+
+//!-----------
+//?GET BY NAME
+//!-----------
+const getByName = async (req, res, next) => {
+  try {
+    const { name } = req.params;
+
+    /// nos devuelve un array de elementos
+    const beerByName = await Beer.find({ name });
+    if (beerByName.length > 0) {
+      return res.status(200).json(beerByName);
+    } else {
+      return res.status(404).json("Beer not found");
+    }
+  } catch (error) {
+    return res.status(404).json({
+      error: "error al buscar por nombre capturado en el catch",
+      message: error.message,
+    });
+  }
+};
+
+module.exports = { createBeer, getById, getAll, getByName };
