@@ -38,27 +38,35 @@ const BarSchema = new mongoose.Schema(
     },
     services: {
       type: String,
-      enum: ["billiards", "pool", "karaoke", "arcade games", "live music"],
+      enum: [
+        "billiards",
+        "pool",
+        "karaoke",
+        "arcade games",
+        "live music",
+        "None",
+      ],
       default: "None",
     },
     opens: {
       type: String,
       required: true,
       trim: true,
-      unique: true,
-      validate: [validator.isTime, `Not a time format`],
+      //validate: [validator.isTime, `Not a time format`],
+      required: true,
     },
     closes: {
       type: String,
       required: true,
       trim: true,
-      unique: true,
-      validate: [validator.isTime, `Not a time format`],
+      //validate: [validator.isTime, `Not a time format`],
+      required: true,
     },
 
     patio: {
       type: Boolean,
       default: false,
+      required: true,
     },
     image: {
       type: String,

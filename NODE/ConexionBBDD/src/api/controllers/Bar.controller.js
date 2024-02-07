@@ -1,12 +1,17 @@
 const Bar = require("../models/Bar.model");
+const validator = require("validator");
+const dotenv = require("dotenv");
+const enumOk = require("../../utils/enumOk");
+dotenv.config();
 
 const createBar = async (req, res, next) => {
+  let catchImg = req.file?.path;
   try {
     await Bar.syncIndexes();
-
+    console.log("XXXXX", req.body);
     /** hacemos una instancia del modelo  */
     const customBody = {
-      email: req.body?.name,
+      email: req.body?.email,
       name: req.body?.name,
       location: req.body?.location,
       genre: req.body?.genre,
@@ -14,20 +19,35 @@ const createBar = async (req, res, next) => {
       opens: req.body?.opens,
       closes: req.body?.closes,
       patio: req.body?.patio,
-      image: req.body?.image,
     };
     const newBar = new Bar(customBody);
-    const savedBar = await newBar.save();
-
+    if (req.file) {
+      newBar.image = catchImg;
+    } else {
+      newBar.image =
+        "https://res.cloudinary.com/dhu1it9x8/image/upload/v1707250175/pub_urp664.png";
+    }
     // test en el runtime
-    return res
-      .status(savedBar ? 200 : 404)
-      .json(savedBar ? savedBar : "error creating bar");
+    console.log(newBar);
+    try {
+      const saveBar = await newBar.save();
+      if (saveBar) {
+        return res.status(200).json(saveBar);
+      } else {
+        return res.status(404).json("Not able to save new bar ❌");
+      }
+    } catch (error) {
+      console.log("🚀 ~ createBar ~ error:", error);
+      return res.status(404).json("error general saved bar");
+    }
   } catch (error) {
-    return res.status(404).json({
-      error: "error catch create bar",
-      message: error.message,
-    });
+    req.file?.path && deleteImgCloudinary(catchImg);
+    return (
+      res.status(404).json({
+        message: "Error creating element",
+        error: error,
+      }) && next(error)
+    );
   }
 };
 
