@@ -175,7 +175,7 @@ const getByName = async (req, res, next) => {
 const deleteBar = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const bar = await Character.findByIdAndDelete(id);
+    const bar = await Bar.findByIdAndDelete(id);
     if (bar) {
       // lo buscamos para vr si sigue existiendo o no
       const finByIdbar = await Bar.findById(id);
@@ -183,12 +183,12 @@ const deleteBar = async (req, res, next) => {
       try {
         const test = await Beer.updateMany(
           { characters: id },
-          { $pull: { characters: id } }
+          { $pull: { bars: id } }
         );
         console.log(test);
 
         try {
-          await User.updateMany({ barsFav: id }, { $pull: { barsFav: id } });
+          //await User.updateMany({ barsFav: id }, { $pull: { barsFav: id } });
 
           return res.status(finByIdbar ? 404 : 200).json({
             deleteTest: finByIdbar ? false : true,
