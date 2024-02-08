@@ -64,7 +64,7 @@ const toggleBeer = async (req, res, next) => {
       const arrayIdBeers = beers.split(",");
       Promise.all(
         arrayIdBeers.map(async (beer, index) => {
-          if (barByIdById.beers.includes(beer)) {
+          if (barById.beers.includes(beer)) {
             try {
               await Bar.findByIdAndUpdate(id, {
                 $pull: { beers: beer },

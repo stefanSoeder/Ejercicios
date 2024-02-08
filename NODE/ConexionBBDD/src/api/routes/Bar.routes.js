@@ -13,7 +13,7 @@ BarRoutes.post("/bar", upload.single("image"), createBar);
 BarRoutes.patch("/add/:id", toggleBeer);
 BarRoutes.get("/:id", getById);
 BarRoutes.get("/", getAll);
-BarRoutes.get("byName/:name", getByName);
+BarRoutes.get("/byName/:name", getByName);
 BarRoutes.delete("/:id", deleteBar);
 
 module.exports = BarRoutes;
