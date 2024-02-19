@@ -14,6 +14,7 @@ const {
   modifyPassword,
   update,
   deleteUser,
+  toggleFollowers,
 } = require("../controllers/User.controllers");
 const express = require(`express`);
 const UserRoutes = express.Router();
@@ -31,5 +32,6 @@ UserRoutes.patch("/forgotpassword", changePassword);
 UserRoutes.patch("/sendPassword/:id", sendPassword);
 UserRoutes.patch("/changepassword", [isAuth], modifyPassword);
 UserRoutes.patch("/update/update", [isAuth], upload.single("image"), update);
+UserRoutes.patch("/add/:id", toggleFollowers);
 UserRoutes.delete("/", [isAuth], deleteUser);
 module.exports = UserRoutes;

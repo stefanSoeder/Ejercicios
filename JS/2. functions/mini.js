@@ -7,21 +7,76 @@
 
 //---
 
-const persona = {
-  nombre: "Juan",
-  edad: 30,
-  direccion: {
-    ciudad: "Bogotá",
-    pais: "Colombia",
-  },
+// const persona = {
+//   nombre: "Juan",
+//   edad: 30,
+//   direccion: {
+//     ciudad: "Bogotá",
+//     pais: "Colombia",
+//   },
+// };
+
+// const {
+//   nombre,
+//   edad,
+//   direccion: { ciudad },
+// } = persona;
+// console.log(nombre); // imprime 'Juan'
+// console.log(edad); // imprime 30
+// console.log(ciudad); // imprime 'Bogotá'
+// console.log(persona);
+
+//let dateOfBirth = ["2000 - 10 - 10"];
+//console.log("🚀 ~ dateOfBirth:", dateOfBirth);
+const isOver16 = (dateOfBirth) => {
+  // Ensure birthDate is a Date object
+  if (!(dateOfBirth instanceof Date)) {
+    dateOfBirth = new Date(dateOfBirth);
+  }
+
+  // Calculate the difference in milliseconds between now and 16 years ago
+  const now = new Date();
+  const sixteenYearsAgo = new Date(
+    now.getFullYear() - 16,
+    now.getMonth(),
+    now.getDate()
+  );
+
+  // Compare birthDate with the threshold. User is over 16 if
+  // their birthdate is earlier than sixteenYearsAgo
+  return dateOfBirth <= sixteenYearsAgo;
 };
 
-const {
-  nombre,
-  edad,
-  direccion: { ciudad },
-} = persona;
-console.log(nombre); // imprime 'Juan'
-console.log(edad); // imprime 30
-console.log(ciudad); // imprime 'Bogotá'
-console.log(persona);
+// Example Usage:
+const userBirthDate = new Date("1995-06-15"); // Replace with the actual user's birthdate
+
+if (isOver16(userBirthDate)) {
+  console.log("User is over 16 years old.");
+} else {
+  console.log("User is not over 16 years old.");
+}
+//!------------------------------------------------------------------------------------------- */
+
+
+try {
+  const userSave = await newUser.save();
+  const PORT = process.env.PORT;
+  if (userSave) {
+    return res.redirect(
+      303,
+      `http://localhost:${PORT}/api/v1/users/register/sendMail/${userSave._id}`
+    );
+  }
+} catch (error) {
+  return res.status(404).json(error.message);
+}
+} else {
+if (req.file) deleteImgCloudinary(catchImg);
+return res.status(409).json("this user already exist");
+}
+} catch (error) {
+if (req.file) {
+deleteImgCloudinary(catchImg);
+}
+return next(error);
+}

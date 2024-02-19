@@ -30,8 +30,6 @@
 
 // let acc = 0;
 
-
-
 // while (i < 10) {
 //   i++;
 //   console.log(`Estamos con la i:${i}`);
@@ -41,7 +39,6 @@
 // let values = Object.values(batman);
 // console.log("🚀 ~ values:", values);
 
-
 //!--------------------------------------
 // Comprueba en cada uno de los usuarios que tenga al menos dos trimestres aprobados
 // y añade la propiedad isApproved a true o false en consecuencia.
@@ -49,34 +46,38 @@
 // ( Mirar abajo en pistas ).
 // Puedes usar este array para probar tu función:
 
-//!----------------------------------------------------------------------------------------------------------------------------------------------------------
+// //!----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-const alumns = [
-  { name: "Pepe Viruela", T1: false, T2: false, T3: true },
-  { name: "Lucia Aranda", T1: true, T2: false, T3: true },
-  { name: "Juan Miranda", T1: false, T2: true, T3: true },
-  { name: "Alfredo Blanco", T1: false, T2: false, T3: false },
-  { name: "Raquel Benito", T1: true, T2: true, T3: true },
-];
-alumns.forEach((alumns))=>{
-  alumns.isApproved=()
-}
-let evaluacion = (clase) => {
-  alumns.forEach((alumn) => {
-    let aprobados = 0;
-    for (let clave in alumn) {
-      if (alumn[clave] === true) {
-        aprobados++;
-      } else if (alumn[clave] === false) {
-        aprobados--;
-      }
-        if ((aprobados) => 2) {
-        isApproved: true;
-        } else {
-        isApproved: false;
-        }
-    }
-  });
-};
-alumns[indice].isApproved =
-console.log (aprobados)
+// const alumns = [
+//   { name: "Pepe Viruela", T1: false, T2: false, T3: true },
+//   { name: "Lucia Aranda", T1: true, T2: false, T3: true },
+//   { name: "Juan Miranda", T1: false, T2: true, T3: true },
+//   { name: "Alfredo Blanco", T1: false, T2: false, T3: false },
+//   { name: "Raquel Benito", T1: true, T2: true, T3: true },
+// ];
+// alumns.forEach((alumns))=>{
+//   alumns.isApproved=()
+// }
+// let evaluacion = (clase) => {
+//   alumns.forEach((alumn) => {
+//     let aprobados = 0;
+//     for (let clave in alumn) {
+//       if (alumn[clave] === true) {
+//         aprobados++;
+//       } else if (alumn[clave] === false) {
+//         aprobados--;
+//       }
+//         if ((aprobados) => 2) {
+//         isApproved: true;
+//         } else {
+//         isApproved: false;
+//         }
+//     }
+//   });
+// };
+// alumns[indice].isApproved =
+// console.log (aprobados)
+
+const ahora = new Date();
+const horaActual = ahora.getHours();
+console.log("🚀 ~ horaActual:", horaActual);

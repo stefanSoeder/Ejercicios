@@ -738,6 +738,61 @@ const deleteUser = async (req, res, next) => {
   }
 };
 
+//!--------
+//? Toggle
+//!--------
+const toggleFollowers = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const { followers } = req.body;
+    const userById = await user.findById(id);
+    if (userById) {
+      const arrayIdFollowers = followers.split(",");
+      Promise.all(
+        arrayIdFollowers.map(async (follower, index) => {
+          if (userById.followers.includes(follower)) {
+            try {
+              await User.findByIdAndUpdate(id, {
+                $pull: { followers: follower },
+              });
+              try {
+                await User.findByIdAndUpdate(follower, {
+                  $pull: { Followed: id },
+                });
+              } catch (error) {
+                res.status(404).json({
+                  error: "error update follower",
+                  message: error.message,
+                }) && next(error);
+              }
+            } catch (error) {
+              res.status(404).json({
+                error: "error update bar",
+                message: error.message,
+              }) && next(error);
+            }
+          }
+        })
+      )
+        .catch((error) => res.status(404).json(error.message))
+        .then(async () => {
+          return res.status(200).json({
+            dataUpdate: await User.findById(id).populate("followers"),
+          });
+        });
+    } else {
+      return res.status(404).json("This user does not exist");
+    }
+  } catch (error) {
+    return (
+      res.status(404).json({
+        error: "error catch",
+        message: error.message,
+      }) && next(error)
+    );
+  }
+};
+
 module.exports = {
   registerLargo,
   register,
@@ -752,4 +807,5 @@ module.exports = {
   modifyPassword,
   update,
   deleteUser,
+  toggleFollowers,
 };
