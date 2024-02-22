@@ -2,12 +2,15 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import {Title, SubTitle, Image, Paragrapgh} from "./components"
+import Title from './components/Title/Title'
+import SubTitle from './components/SubTitle/SubTitle'
+import Image from './components/Image/Image'
 
 
-function App() {
+const App = () => {
   const [count, setCount] = useState(0)
   console.log(count)
+  
   return (
     <>
       <div>
@@ -18,15 +21,14 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <Title/>
+      <h1>Vite + React</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
           <>
-          <SubTitle/>
-          <Image/>
-          <Paragrapgh/>
+          <Title textH1="H1 por PROPS"/>
+          <SubTitle textH2="H2 por PROPS"/>
           </>
       </div>
       <p className="read-the-docs">
