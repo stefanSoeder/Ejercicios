@@ -1,7 +1,9 @@
-const Paragrapgh = () => {
-    return (
-      <p>Esta es la primera prueba de párrafo</p>
-    );
-  };
-  
-  export default Paragrapgh;
+const Paragraph = ({textP}) => {
+return (
+    <div>
+      {textP}
+    </div>
+  )
+}
+
+export default Paragraph
