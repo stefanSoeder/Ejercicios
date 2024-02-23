@@ -6,6 +6,11 @@ import { Image2 } from './components/Image2/Image2'
 import Title from './components/Title/Title'
 import SubTitle from './components/SubTitle/SubTitle'
 import Paragraph from './components/Paragraph/Paragraph'
+import H1 from './components/H1/H1'
+import Button from './components/Button/Button'
+import Header from './components/Header/Header'
+import Main from './components/Main/Main'
+import Footer from './components/Footer/Footer'
 
 const App = () => {
   const [count, setCount] = useState(0)
@@ -26,11 +31,13 @@ const App = () => {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <H1>Soy el Children</H1>
+      <Header><Title textH1={"Child  Title"} /></Header>
+      <Main><SubTitle textH2={"Child Subtitle"}/><Paragraph textP={"Child Paragraph"}/></Main>
+      <Footer><Image2 {...{imageProps}}/></Footer>
+
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <Button funcionSeteadora={setCount} valorDelEstado={count}/>
           <>
           <Title textH1="H1 por PROPS"/>
           <SubTitle textH2="H2 por PROPS"/>
