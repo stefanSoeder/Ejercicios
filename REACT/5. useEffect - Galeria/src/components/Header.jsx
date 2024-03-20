@@ -1,7 +1,11 @@
-import "./Header.css"
+import React from 'react'
 
-export const Header = () => {
+const Header = () => {
   return (
-    <header>Header</header>
+    <div>
+      
+    </div>
   )
-  }
+}
+
+export default Header
