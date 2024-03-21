@@ -56,27 +56,3 @@ if (isOver16(userBirthDate)) {
   console.log("User is not over 16 years old.");
 }
 //!------------------------------------------------------------------------------------------- */
-
-
-try {
-  const userSave = await newUser.save();
-  const PORT = process.env.PORT;
-  if (userSave) {
-    return res.redirect(
-      303,
-      `http://localhost:${PORT}/api/v1/users/register/sendMail/${userSave._id}`
-    );
-  }
-} catch (error) {
-  return res.status(404).json(error.message);
-}
-} else {
-if (req.file) deleteImgCloudinary(catchImg);
-return res.status(409).json("this user already exist");
-}
-} catch (error) {
-if (req.file) {
-deleteImgCloudinary(catchImg);
-}
-return next(error);
-}
