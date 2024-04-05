@@ -1,3 +1,21 @@
 console.log("Stefan Martin");
 console.log(1985);
 console.log("Stefan" + " " + "Martin" + " " + "(1985)");
+
+let rosePrice = 8;
+let roseAmount = 70;
+let lilyPrice = 10;
+let lilyAmount = 50;
+let tulipPrice = 2;
+let tulipAmount = 120;
+let roses = rosePrice * roseAmount;
+console.log(roses);
+let lilys = lilyAmount * lilyPrice;
+let tulips = tulipAmount * tulipPrice;
+let totalAmount = roses + lilys + tulips;
+console.log(totalAmount);
+roseAmount = roseAmount - 20;
+console.log(roseAmount);
+lilyAmount = lilyAmount - 30;
+let totalAmount2 = roses + lilys + tulips;
+console.log("🚀 ~ totalAmount2:", totalAmount2);
