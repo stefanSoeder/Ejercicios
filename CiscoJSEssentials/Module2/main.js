@@ -65,3 +65,115 @@ console.log("🚀 ~ dif1:", dif1);
 
 const str1 = 42 + +"1";
 console.log("🚀 ~ str1:", str1);
+
+//!-------------------------
+//? 2.2.1 Complex data types
+//!-------------------------
+
+let trainTicket1 = {
+  from: "Vallecas",
+  to: "Chamartin",
+  price: "1.75€",
+};
+console.log(trainTicket1.from);
+console.log(trainTicket1.to);
+console.log(trainTicket1.price);
+
+let person = {};
+person.name = "Stefan";
+person.lastname = "Martin";
+console.log(person);
+console.log(person.name);
+console.log(person.lastname);
+
+let books = [
+  {
+    title: "Speaking JavaScript",
+    author: "Axel Rauschmayer",
+    pages: 460,
+  },
+  {
+    title: "Programming JavaScript Applications",
+    author: "Eric Elliott",
+    pages: 254,
+  },
+  {
+    title: "Understanding ECMAScript 6",
+    author: "Nicholas C. Zakas",
+    pages: 352,
+  },
+];
+books.push({
+  title: "Learning JavaScript Design Patterns",
+  author: "Addy Osmani",
+  pages: 254,
+});
+console.log(books.length);
+console.log(books[0].title);
+console.log(books[1].title);
+console.log(books[2].title);
+console.log(books[3].title);
+
+let selectedBooks = books.slice(-2);
+console.log(selectedBooks);
+
+let updatedBooks = books.shift();
+console.log("🚀 ~ updatedBooks:", updatedBooks);
+//console.log(updatedBooks[(0, 1, 2)].title);
+
+let totalPages = books[0].pages + books[1].pages + books[2].pages;
+
+console.log(books);
+console.log("🚀 ~ totalPages:", totalPages);
+
+//!----------------------
+//? 2.2.5  LAB  Data Types
+//!----------------------
+
+let contacts = [
+  {
+    name: "Maxwell Wright",
+    phone: "(0191) 719 6495",
+    email: "Curabitur.egestas.nunc@nonummyac.co.uk",
+  },
+  {
+    name: "Raja Villarreal",
+    phone: "0866 398 2895",
+    email: "posuere.vulputate@sed.com",
+  },
+  {
+    name: "Helen Richards",
+    phone: "0800 1111",
+    email: "libero@convallis.edu",
+  },
+];
+
+contacts.push({
+  name: "Maisie Haley",
+  phone: "0913 531 3030",
+  email: "risus.Quisque@urna.ca",
+});
+console.log(contacts);
+console.log(contacts.length);
+console.log(contacts[0]);
+console.log(contacts[3]);
+
+//!-----------------------
+//? 2.3.4 SECTION PRACTICE
+//!-----------------------
+
+("use  strict");
+
+const prefix = "username_";
+
+//let  userName  =  "Jack";
+const userName = "Adam";
+
+//let prefixedUserName;
+// const  prefixedUserName;
+
+// userName  =  "John";
+prefixedUserName = prefix + userName;
+
+console.log(prefixedUserName);
+//console.log(prefixedUserName2);
