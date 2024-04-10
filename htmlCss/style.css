@@ -1,0 +1,67 @@
+header.page-header {
+  background: no-repeat left/cover url("./public/puppy-header-logo.jpg");
+  display: flex;
+  height: 120px;
+  min-width: 120px;
+  align-items: center;
+  color: #fff;
+  text-shadow: #000 0 0 0.2em;
+}
+
+header.page-header > h1 {
+  font: bold calc(1em + 2 * (100vw - 120px) / 100) "Dancing Script", cursive,
+    fantasy;
+  margin: 2%;
+}
+
+main {
+  font: 1rem "Fira Sans", sans-serif;
+}
+aside {
+  width: 40%;
+  padding-left: 0.5rem;
+  margin-left: 0.5rem;
+  float: right;
+  box-shadow: inset 5px 0 5px -5px #29627e;
+  font-style: italic;
+  color: #29627e;
+}
+
+aside > p {
+  margin: 0.5rem;
+}
+
+p {
+  font-family: "Fira Sans", sans-serif;
+}
+.forecast {
+  margin: 0;
+  padding: 0.3rem;
+  background-color: #eee;
+  font: 1rem "Fira Sans", sans-serif;
+}
+
+.forecast > h1,
+.day-forecast {
+  margin: 0.5rem;
+  padding: 0.3rem;
+  font-size: 1.2rem;
+}
+
+.day-forecast {
+  background: right/contain content-box border-box no-repeat
+    url("./assets/rain.svg") white;
+}
+
+.day-forecast > h2,
+.day-forecast > p {
+  margin: 0.2rem;
+  font-size: 1rem;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  background-color: #45a1ff;
+  color: #fff;
+}
