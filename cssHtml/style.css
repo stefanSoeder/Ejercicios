@@ -5,124 +5,51 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-family: sans-serif;
+  color: white;
+  background-color: black;
 }
 
 header {
-  background-image: url(https://lumiere-a.akamaihd.net/v1/images/pp_xmen1992_herobanner_21369_2ead90c7.jpeg?region=0,0,2048,878);
-  background-size: cover;
-  height: 300px;
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-header h1 {
-  color: white;
-  text-align: center;
-  font-size: 2em;
-}
-
-nav {
+  justify-content: space-between;
   background-color: #333;
+  padding: 1rem 2%;
 }
 
-nav ul {
-  display: flex;
-  list-style: none;
+h1 {
+  font-size: 2rem;
+  margin: 0;
 }
 
-nav li {
-  flex: 1;
-  text-align: center;
-}
-
-nav a {
-  display: block;
-  padding: 20px 0;
-  color: white;
-  text-decoration: none;
-}
-
-/*HOVER Y FOCUS AL NAV */
-
-nav li:hover, nav li:active{
-  background-color: gray;
-}
-
-nav a:active{
-  color: blueviolet;
-}
-
-nav a:focus{
-  color: purple;
-  border-color: purple  ;
+img {
+  height: 10vh;
 }
 
 main {
-  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: left;
 }
 
-section {
-  margin-bottom: 20px;
+h2,
+h3 {
+  margin: 1rem 0;
 }
 
-section h2 {
-  text-align: center;
-  margin-bottom: 20px;
+ul {
+  list-style: none;
 }
 
-section ul {
-  display: flex;
-  justify-content: space-around;
+li {
+  margin: 0.5rem 0;
 }
-
-section li {
-  margin: 0 10px;
-  list-style-type: none;
-}
-
-/* SUSITUIR EL PUNTO DE LA LISTA POR LA X */
-
-section li::before{
-  content: ❎;
-  color: black;
-  padding-left: 5px;
-
-}
-
-section a {
-  color: #333;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-/* AÑADIR CORCHETES A LOS ENLACES */
-
-/* AÑADIR HOVER A LOS ENLACES */
-
-/* AÑADIR FOCUS A LOS ENLACES */
 
 footer {
-  background-color: #333;
-  color: white;
-  padding: 20px;
+  background-color: #999;
+  padding: 1rem;
   text-align: center;
-}
-
-footer p {
-  margin: 0;
-  font-size: 0.8em;
-}
-
-
-nav a::before {
-  content: "[";
-}
-nav a::after{
-  content: "]";
-}
-a:focus{
-  color: red;
 }
