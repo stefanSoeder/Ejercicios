@@ -1,16 +1,87 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap')
-;
-@font-face {
-  font-family: "Bergdool";
-  src: 
-    local ("Bergdool"),
-    url("./public/Bergdool.ttf") format("truetype"),
-    url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap')
+*{padding: 0;
+margin:0;
+box-sizing:border-box}
+
+header {
+  height: 15vh;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
 
 }
-p {
-  font-family: "Open-Sans"
+header .container{
+  background-color: orange;
 }
-h1,h2 {
-  font-family: "Bergdool";
+header .container img{
+  height: 2rem;
+  margin-top: 8px;
+}
+nav {
+  background-color: orange;
+  padding: 8px;
+}
+nav .container ul {
+  display: flex;
+  justify-content: space-between;
+}
+nav .container ul li {
+  padding-left: 17vw;
+  padding-right: 17vw;
+  display: inline-block;
+}
+nav .container ul li:first-child{
+  background-color: darkslateblue;
+}
+nav .container ul li a{
+  color: white;
+  text-decoration: none;
+}
+
+main .container section h2 {
+  color: rgb(71, 65, 113);
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+main .container section img {
+  width: 4rem; 
+  height: 4rem;
+  margin-top: 3 rem;
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 1rem;
+}
+main .container #about p{
+  text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+main .container ul{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+main .container ul li {
+  display: flex;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  margin-top: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: orange;
+  color: white;
+  align-items: center;
+  text-align: center;
+}
+footer {
+  background-color: blueviolet;
+  height: 05vw;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
