@@ -89,84 +89,85 @@ const mixedElements = [6, 1, "Rayo", 1, "vallecano", "10", "upgrade", 8, "hub"];
 
 const mixedSum = (mixedArray) => {
   let elementTotal = 0;
+  {
+    for (let value of mixedArray) {
+      if (typeof value == `number`) {
+        elementTotal += value;
+      } else {
+        elementTotal += value.length;
+      }
+    }
+    return elementTotal;
+  }
 };
-
-// const mixedElements = [6, 1, "Rayo", 1, "vallecano", "10", "upgrade", 8, "hub"];
-// let pStrings = (mixedArray) => {
-//   let acc = [];
-//   for (let i = 0; i < mixedArray.length; i++) {
-//     if (mixedArray[i] != Number) {
-//       acc = mixedArray[i].length;
-//     } else {
-//       acc = mixedArray[i];
-//     }
-//   }
-// };
-
-// const converse = pStrings(mixedElements);
-// console.log("🚀 ~ converse:", converse);
+const mezclaTotal = mixedSum(mixedElements);
+console.log("🚀 ~ mezclaTotal:", mezclaTotal);
 
 // //!---------------------------------
 // //? **Iteración #6: Valores Únicos**
 // //!---------------------------------
 
-// // Crea una función que reciba por parámetro un array
-// // y compruebe si existen elementos duplicados,
-// // en caso que existan los elimina para retornar un array sin los elementos duplicados.
-// // Puedes usar este array para probar tu función:
+// Crea una función que reciba por parámetro un array
+// y compruebe si existen elementos duplicados,
+// en caso que existan los elimina para retornar un array sin los elementos duplicados.
+// Puedes usar este array para probar tu función:
 
-// const duplicates = [
-//   "sushi",
-//   "pizza",
-//   "burger",
-//   "potatoe",
-//   "pasta",
-//   "ice-cream",
-//   "pizza",
-//   "chicken",
-//   "onion rings",
-//   "pasta",
-//   "soda",
-// ];
+const duplicates = [
+  "sushi",
+  "pizza",
+  "burger",
+  "potatoe",
+  "pasta",
+  "ice-cream",
+  "pizza",
+  "chicken",
+  "onion rings",
+  "pasta",
+  "soda",
+];
 
-// let singles = [];
-// duplicates.forEach((item) => {
-//   if (!singles.includes(item)) {
-//     singles.push(item);
-//   }
-// });
-// const notDuplicated = singles;
-// console.log("🚀 ~ notDuplicated:", notDuplicated);
+const dupCheck = (dupArray) => {
+  const checker = [];
+  dupArray.forEach((element) => {
+    if (!checker.includes(element)) {
+      checker.push(element);
+    }
+  });
+  return checker;
+};
+const cleanDups = dupCheck(duplicates);
+console.log("🚀 ~ cleanDups:", cleanDups);
 
 // //!------------------------------------
 // //? Iteración #7: Buscador de nombres**
 // //!------------------------------------
 
-// // Crea una función que reciba por parámetro un array y el valor que desea
-// // comprobar que existe dentro de dicho array - comprueba si existe el elemento,
-// // en caso que existan nos devuelve un true y la posición de dicho elemento y por la contra un false.
-// //Puedes usar este array para probar tu función:
+// Crea una función que reciba por parámetro un array y el valor que desea
+// comprobar que existe dentro de dicho array - comprueba si existe el elemento,
+// en caso que existan nos devuelve un true y la posición de dicho elemento y por la contra un false.
+//Puedes usar este array para probar tu función:
 
-// const namesss = [
-//   "Peter",
-//   "Steve",
-//   "Tony",
-//   "Natasha",
-//   "Clint",
-//   "Logan",
-//   "Xabier",
-//   "Bruce",
-//   "Peggy",
-//   "Jessica",
-//   "Marc",
-// ];
+const namesss = [
+  "Peter",
+  "Steve",
+  "Tony",
+  "Natasha",
+  "Clint",
+  "Logan",
+  "Xabier",
+  "Bruce",
+  "Peggy",
+  "Jessica",
+  "Marc",
+];
 
-// let nameFinder = (namesArray, nombre) => {
-//   let resultado = namesArray.indexOf(nombre);
-//   if (resultado === -1) {
-//     return false;
-//   } else {
-//     return { existeNombre: true, resultado: resultado };
-//   }
-// };
-// console.log(nameFinder(namesss, "Peter"));
+const nameFinder = (namesArray, nameToFind) => {
+  const result = namesArray.indexOf(nameToFind);
+  if (result === -1) {
+    return false;
+  } else {
+    return { nameExist: true, position: result };
+  }
+};
+const isHeHere = nameFinder(namesss, "Peter");
+console.log("🚀 ~ isHeHere:", isHeHere);
