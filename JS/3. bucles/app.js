@@ -1,7 +1,8 @@
 //!----------------------------------------------------------------------------------------------------------------------------------------------------------
 //? **Iteración #1: Usa includes**
 
-//? Haz un bucle y muestra por consola todos aquellos valores del array que incluyan la palabra "Camiseta". Usa la función .***includes*** de javascript.
+//? Haz un bucle y muestra por consola todos aquellos valores del array que incluyan la palabra "Camiseta".
+//? Usa la función .***includes*** de javascript.
 
 //?```jsx
 //? const products = ['Camiseta de Pokemon', 'Pantalón coquinero', 'Gorra de gansta', 'Camiseta de Basket','Cinrurón de Orión', 'AC/DC Camiseta']
@@ -16,11 +17,11 @@ const products = [
   "AC/DC Camiseta",
 ];
 
-for (let i = 0; i < products.length; i++) {
-  if (products[i].includes("Camiseta")) {
-    console.log(i);
+products.forEach((element) => {
+  if (element.includes("Camiseta")) {
+    console.log(element);
   }
-}
+});
 
 //!--------------------------------------
 //? Iteración #2: Condicionales avanzados
@@ -40,27 +41,21 @@ const alumns = [
   { name: "Alfredo Blanco", T1: false, T2: false, T3: false },
   { name: "Raquel Benito", T1: true, T2: true, T3: true },
 ];
-alumns.forEach((alumns))=>{
-  alumns.isApproved=()
-}
-let evaluacion = (clase) => {
-  alumns.forEach((alumns) => {
-    let aprobados = 0;
-    for (let clave in alumn) {
-      if (alumn[clave] === true) {
-        aprobados++;
-      } else if (alumn[clave] === false) {
-        aprobados--;
-      }
-      if ((aprobados) => 2) {
-        isApproved: true;
-      } else {
-        isApproved: false;
-      }
+
+let acc = 0;
+alumns.forEach((element) => {
+  let counter = 0;
+  for (key in element)
+    if (element[key] === true) {
+      counter++;
     }
-  });
-};
-alumns[indice].isApproved = 
+  if (counter >= 2) {
+    element.isApproved = true;
+  } else {
+    element.isApproved = false;
+  }
+});
+console.log(alumns);
 
 //!--------------------------------
 //? Iteración #3: Probando For...of
@@ -96,8 +91,8 @@ const alien = {
   planet: "Eden",
   weight: "259kg",
 };
-for (let feature in alien) {
-  console.log(`La característica ${feature} del alien es ${alien[feature]}`);
+for (key in alien) {
+  console.log(key + ":" + alien[key]);
 }
 
 //!--------------------------------
@@ -116,14 +111,24 @@ const places2Travel = [
   { id: 44, name: "Filipinas" },
   { id: 59, name: "Madagascar" },
 ];
+
 for (let i = 0; i < places2Travel.length; i++) {
   if (places2Travel[i].id === 11) {
     delete places2Travel[i];
   } else if (places2Travel[i].id === 40) {
     delete places2Travel[i];
   }
-  console.log("🚀 ~ places2Travel:", places2Travel);
 }
+console.log(places2Travel);
+
+// for (let i = 0; i < places2Travel.length; i++) {
+//   if (places2Travel[i].id === 11) {
+//     delete places2Travel[i];
+//   } else if (places2Travel[i].id === 40) {
+//     delete places2Travel[i];
+//   }
+//   console.log("🚀 ~ places2Travel:", places2Travel);
+// }
 
 //!----------------------------------------
 //? Iteración #6: Mixed For...of e includes
@@ -139,13 +144,22 @@ const toys = [
   { id: 40, name: "El gato felix" },
 ];
 
-for (let i = 0; i < toys.length; i++) {
-  let word = "gato";
-  if (toys[i].name.includes(word)) {
-    delete toys[i];
+const noCatsAllowed = [];
+
+for (let juguete of toys) {
+  if (!juguete.name.includes("gato")) {
+    noCatsAllowed.push(juguete);
   }
 }
-console.log(toys);
+console.log(noCatsAllowed);
+
+// for (let i = 0; i < toys.length; i++) {
+//   let word = "gato";
+//   if (toys[i].name.includes(word)) {
+//     delete toys[i];
+//   }
+// }
+// console.log(toys);
 
 //!--------------------------------
 //? Iteración #7: For...of avanzado
@@ -154,7 +168,6 @@ console.log(toys);
 // Usa un bucle **for...of** para recorrer todos los juguetes y añade los que tengan más
 // de 15 ventas (sellCount) al array popularToys. Imprimelo por consola.. Puedes usar este array:
 
-const popularToys = [];
 const toys2 = [
   { id: 5, name: "Buzz MyYear", sellCount: 10 },
   { id: 11, name: "Action Woman", sellCount: 24 },
@@ -163,9 +176,21 @@ const toys2 = [
   { id: 40, name: "El gato felix", sellCount: 35 },
 ];
 
-for (let i = 0; i < toys2.length; i++) {
-  if (toys2[i].sellCount > 15) {
-    popularToys.push(toys2[i].name);
+const popularToys = [];
+
+for (let toy of toys2)
+  for (key in toy) {
+    if (key == "sellCount") {
+      if (toy[key] > 15) {
+        popularToys.push(toy);
+      }
+    }
   }
-}
 console.log(popularToys);
+
+// for (let i = 0; i < toys2.length; i++) {
+//   if (toys2[i].sellCount > 15) {
+//     popularToys.push(toys2[i].name);
+//   }
+// }
+// console.log(popularToys);
