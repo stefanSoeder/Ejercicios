@@ -27,3 +27,39 @@ console.log(`What do you have left in yuan? ${leftYuan}`);
 console.log(`What do you have left in yen? ${leftYen}`);
 console.log(`What do you have left in won? ${leftWon}`);
 console.log(financeState);
+
+// Greeter ⏰
+
+let hour = 10;
+const greeter = (number) => {
+  if (number < 12) {
+    console.log(`Good morning! its ${hour} o´clock!`);
+  }
+};
+const amPm = greeter(hour);
+
+// Greeter elsePM ⏰
+
+let hour2 = 16;
+const greeter2 = (number) => {
+  if (number < 12) {
+    console.log(`Good morning! its ${hour2} o´clock!`);
+  } else {
+    console.log(`Good afternoon! its ${hour2} o´clock!`);
+  }
+};
+const amPm2 = greeter2(hour2);
+
+// pH Indicator 💖
+
+let ph = 7;
+const phIndicator = (number) => {
+  if (number > 7) {
+    console.log("Basic");
+  } else if (number < 7) {
+    console.log("Acidic");
+  } else {
+    console.log("Neutral");
+  }
+};
+const phIndex = phIndicator(ph);
