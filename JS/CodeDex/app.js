@@ -77,7 +77,7 @@ const eightBall = (luck) => {
     answer = "It is decidedly so.";
   } else if (luck == 2) {
     answer = "Without a doubt.";
-  } else if (answer == 3) {
+  } else if (luck == 3) {
     luck = "Reply hazy, try again.";
   } else if (luck == 4) {
     answer = "Ask again later.";
@@ -90,7 +90,45 @@ const eightBall = (luck) => {
   } else if (luck == 8) {
     answer = "Very doubtful";
   }
+  return answer;
 };
 const fate = eightBall(magic8);
 
-console.log(`For the question, ${question} the answer is ${answer}`);
+console.log(`For the question, ${question} the answer is ${fate}`);
+
+//Air quality Index🌬️
+/*In summer 2023, the smoke from wildfires in Canada raised concerns about the Air Quality Index (AQI) in one's area.
+
+Create an air-quality-index.js program.
+
+Google the AQI in your area and define an aqi variable with that number.
+
+Write an if/else if/else statement with the following logic:
+
+If aqi is between 0 and 50, print “Good”.
+Else if aqi is between 51 and 100, print "Moderate".
+Else if aqi is between 101 and 150, print "Unhealthy (Sensitive Groups)".
+Else if aqi is between 151 and 200, print "Unhealthy".
+Else if aqi is between 201 and 300, print “Very Unhealthy”.
+Else, print “Hazardous”.*/
+
+let aqi = 117;
+let aqiLevel = "";
+const aqiLevelCalculator = (number) => {
+  if (number <= 50) {
+    aqiLevel = "Good";
+  } else if (number > 50 && number <= 100) {
+    aqiLevel = "Moderate";
+  } else if (number > 100 && number <= 150) {
+    aqiLevel = "Unhealthy (Sensitive Groups)";
+  } else if (number > 150 && number <= 200) {
+    aqiLevel = "Unhealthy";
+  } else if (number > 200 && number <= 300) {
+    aqiLevel = "Very Unhealthy";
+  } else {
+    aqiLevel = "Hazardous";
+  }
+  return aqiLevel;
+};
+const dubaiAqi = aqiLevelCalculator(aqi);
+console.log(`The aqi level of Dubai is ${dubaiAqi}`);
