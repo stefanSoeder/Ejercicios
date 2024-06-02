@@ -132,3 +132,50 @@ const aqiLevelCalculator = (number) => {
 };
 const dubaiAqi = aqiLevelCalculator(aqi);
 console.log(`The aqi level of Dubai is ${dubaiAqi}`);
+
+// Rock (1), scissors(2) || Paper(3) 🪨✂️🗞️
+
+let player = Math.floor(Math.random() * 3 + 1);
+console.log("🚀 ~ player:", player);
+let computer = Math.floor(Math.random() * 3 + 1);
+console.log("🚀 ~ computer:", computer);
+
+const symbolAssigner = (number) => {
+  assignedSymbol = "";
+  {
+    if (number == 1) {
+      assignedSymbol = "🪨";
+    } else if (number == 2) {
+      assignedSymbol = "✂️";
+    } else {
+      assignedSymbol = "🗞️";
+    }
+    return assignedSymbol;
+  }
+};
+const playerSymbol = symbolAssigner(player);
+console.log("🚀 ~ playerSymbol:", playerSymbol);
+const computerSymbol = symbolAssigner(computer);
+console.log("🚀 ~ computerSymbol:", computerSymbol);
+
+const rockPaperScissors = (a, b) => {
+  let result = " ";
+  if (a == b) {
+    result = "It´s a tie!";
+  } else if (a == 1 && b !== 3) {
+    result = "Player wins!";
+  } else if (a == 2 && b !== 1) {
+    result = "Player wins!";
+  } else if (a == 3 && b !== 1) {
+    result = "Player Wins!";
+  } else {
+    result = "Computer wins!";
+  }
+  return result;
+};
+
+const rockPaperScissorsGame = rockPaperScissors(player, computer);
+console.log("🚀 ~ rockPaperScissorsGame:", rockPaperScissorsGame);
+console.log(
+  `Player draw ${playerSymbol}  and Computer got ${computerSymbol} , therefore... ${rockPaperScissorsGame}`
+);
