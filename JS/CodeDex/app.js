@@ -63,3 +63,34 @@ const phIndicator = (number) => {
   }
 };
 const phIndex = phIndicator(ph);
+
+// Magic Ball 🎱
+
+let question = "Am I a good coder?";
+let answer = " ";
+let magic8 = Math.floor(Math.random() * 9);
+console.log("🚀 ~ magic8:", magic8);
+const eightBall = (luck) => {
+  if (luck == 0) {
+    answer = "Yes - definitely.";
+  } else if (luck == 1) {
+    answer = "It is decidedly so.";
+  } else if (luck == 2) {
+    answer = "Without a doubt.";
+  } else if (answer == 3) {
+    luck = "Reply hazy, try again.";
+  } else if (luck == 4) {
+    answer = "Ask again later.";
+  } else if (luck == 5) {
+    answer = "Better not tell you now.";
+  } else if (luck == 6) {
+    answer = "My sources say no.";
+  } else if (luck == 7) {
+    answer = "Outlook not so good.";
+  } else if (luck == 8) {
+    answer = "Very doubtful";
+  }
+};
+const fate = eightBall(magic8);
+
+console.log(`For the question, ${question} the answer is ${answer}`);
