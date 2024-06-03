@@ -51,3 +51,27 @@ console.log("🚀 ~ poppedMusic:", shiftedMusic);
 const poppedMusic = musicPlaylist.pop();
 console.log("🚀 ~ shiftedMusic:", poppedMusic);
 console.log(musicPlaylist);
+
+// Waldo 🔎
+const nameToSearch = "Waldo";
+const characters = [
+  "The Wally Watchers",
+  "Wilma",
+  "Fritz",
+  "Wizard Whitebeard",
+  "Odlaw",
+  "Waldo",
+  "Woof",
+];
+
+const waldoFinder = (a, b) => {
+  let isHeHere = " ";
+  if (b.includes(a) == true) {
+    isHeHere = `Found Waldo at index ${b.indexOf(a)}`;
+  } else {
+    isHeHere = "Not found";
+  }
+  return isHeHere;
+};
+const whereIsWaldo = waldoFinder(nameToSearch, characters);
+console.log("🚀 ~ whereIsWaldo:", whereIsWaldo);
