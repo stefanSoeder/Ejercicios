@@ -75,3 +75,29 @@ const waldoFinder = (a, b) => {
 };
 const whereIsWaldo = waldoFinder(nameToSearch, characters);
 console.log("🚀 ~ whereIsWaldo:", whereIsWaldo);
+
+// DNA 🧬
+
+const dnaPieces = ["A", "C", "G", "T"];
+
+//let randomPiece = dnaPieces[Math.floor(Math.random() * 3 + 1)];
+
+const secuenceConstructor = (array) => {
+  let randomSecuence = "";
+  for (let i = 0; i < 3; i++) {
+    randomSecuence += array[Math.floor(Math.random() * 3 + 1)];
+  }
+  return randomSecuence;
+};
+const randomSecuences = secuenceConstructor(dnaPieces);
+console.log("🚀 ~ randomSecuences:", randomSecuences);
+
+const myDna = (array) => {
+  let completeDna = [];
+  for (let i = 0; i < 24; i++) {
+    completeDna.push(secuenceConstructor(array));
+  }
+  return completeDna;
+};
+const myCompleteDna = myDna(dnaPieces);
+console.log("🚀 ~ myCompleteDna:", myCompleteDna);
