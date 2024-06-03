@@ -43,3 +43,19 @@ for (let i = 1; i <= 50; i++)
   } else {
     console.log(i);
   }
+
+// 22. Binay Conversor
+
+let myNumber = 25;
+let binary = "";
+
+while (myNumber > 0) {
+  if (myNumber % 2 === 0) {
+    binary += "0";
+  } else {
+    binary += "1";
+  }
+  myNumber = Math.floor(myNumber / 2);
+}
+
+console.log(binary);
