@@ -80,8 +80,6 @@ console.log("🚀 ~ whereIsWaldo:", whereIsWaldo);
 
 const dnaPieces = ["A", "C", "G", "T"];
 
-//let randomPiece = dnaPieces[Math.floor(Math.random() * 3 + 1)];
-
 const secuenceConstructor = (array) => {
   let randomSecuence = "";
   for (let i = 0; i < 3; i++) {
