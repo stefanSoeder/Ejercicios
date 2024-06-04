@@ -60,3 +60,26 @@ Median: ${median(recentInstagramViews)}
 Youtube
 Mean:${mean(recentYouTubeViews)}
 Median:${median(recentYouTubeViews)}`);
+
+// Palindromes 🪵
+
+const wordsArray = ["racecar", "madam", "moonlight", "aviary"];
+
+const palindromes = (word) => {
+  let lowWord = word.toLowerCase();
+  let drow = "";
+  for (let i = lowWord.length - 1; i >= 0; i--) {
+    drow += lowWord[i];
+  }
+  return drow === lowWord;
+};
+
+const isWord = palindromes("race");
+console.log("🚀 ~ isWord:", isWord);
+
+const palindromesWords = (palindromesArray) => {
+  palindromesArray.forEach((element) => {
+    console.log(`${element} is a Palindrome? ${palindromes(element)}`);
+  });
+};
+const palindromesResults = palindromesWords(wordsArray);
