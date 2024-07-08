@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welp</title>
+</head>
+<body>
+    <form>
+        <label for="Name">Name:</label>
+        <br>
+        <input type="text" id="Name" minlength="2" maxlength="15" required>
+        <br>
+        <label for="reviewedItem">What are you reviewing?</label>
+        <br>
+        <input type="text"id="reviewedItem" minlength="2" maxlength="25" required>
+        <br>
+        <label for="tryVisit">Would you try/visit again?</label>
+        <br>
+        <input type="radio" name="tryVisit" id="tryVisitYes" value="Yes"> Yes
+        <input type="radio" name="tryVisit" id="tryVisitNo" value="No"> No
+        <input type="radio" name="tryVisit" id="tryVisitMaybe" value="Maybe"> Maybe
+        <br>
+        <p>Your Review:</p>
+        <textarea id="review" rows="15" cols="42" maxlength="250"></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    
+</body>
+</html>
