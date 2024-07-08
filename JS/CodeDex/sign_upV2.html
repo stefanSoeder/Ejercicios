@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>                              
+    <title>Sign Up</title>
 </head>
 <body>
 <form>
     <h2>Sign Up</h2>
     <label for="userName">User Name: 
     </label>
-    <input type="text" name="userName" id="userName" placeholder="Stefan" maxlength="15" minlength="2" required>
+    <input type="text" name="userName" id="userName" placeholder="Stefan" maxlength="10" minlength="4" required>
     <br>
     <label for ="userEmail">Email:</label>
-    <input type="email" name="userEmail" id="userEmail" placeholder="stefan@gmail.com">
+    <input type="email" name="userEmail" id="userEmail" placeholder="stefan@gmail.com" required> 
     <br>
     <label for="userPassword">Password</label>
-    <input type="password" id="userPassword">
+    <input type="password" id="userPassword" required>
     <button type="button" id="changeVisibility">VER</button>
     <br>
     <label for="confirmPassword">Confirm Password</label>
-    <input type="password" id="confirmPassword">    
-    <button type="button" id="changeVisibility">VER</button>
+    <input type="password" id="confirmPassword" required>    
+    <button type="button" id="changeVisibilityConfirm">VER</button>
     <br>
     <button type="button" id="submit">SUBMIT</button>
 </form>
