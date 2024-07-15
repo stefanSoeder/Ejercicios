@@ -53,3 +53,39 @@ const anagramDetector = (string1, string2) => {
 };
 areThisAnagram = anagramDetector("listen", "silent");
 console.log("🚀 ~ areThisAnagram:", areThisAnagram);
+
+//!------------------
+//? CONTANDO PALABRAS
+//!------------------
+
+/*
+ * Crea un programa que cuente cuantas veces se repite cada palabra
+ * y que muestre el recuento final de todas ellas.
+ * - Los signos de puntuación no forman parte de la palabra.
+ * - Una palabra es la misma aunque aparezca en mayúsculas y minúsculas.
+ * - No se pueden utilizar funciones propias del lenguaje que
+ *   lo resuelvan automáticamente.
+ */
+
+const mainText =
+  "Hola, mi nombre es brais. Mi nombre completo es Brais Moure (MoureDev).";
+
+const wordCounter = (string) => {
+  const cleantText = string.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "");
+  let textToArray = cleantText.split(" ");
+  let words = {};
+  textToArray.forEach((element) => {
+    if (element) {
+      if (!words[element]) {
+        words[element] = 1;
+      } else {
+        words[element] += 1;
+      }
+    }
+  });
+  for (let key in words) {
+    console.log(`La palabra ${key} se repite ${words[key]}`);
+  }
+};
+
+countedWords = wordCounter(mainText);
