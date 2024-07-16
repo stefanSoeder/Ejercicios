@@ -89,3 +89,25 @@ const wordCounter = (string) => {
 };
 
 countedWords = wordCounter(mainText);
+
+//!----------
+//? FIBONACCI
+//!----------
+
+/*
+ * Escribe un programa que imprima los 50 primeros números de la sucesión
+ * de Fibonacci empezando en 0.
+ * - La serie Fibonacci se compone por una sucesión de números en
+ *   la que el siguiente siempre es la suma de los dos anteriores.
+ *   0, 1, 1, 2, 3, 5, 8, 13...
+ */
+
+let fibonacciArray = [0, 1];
+
+while (fibonacciArray.length <= 50) {
+  let newNumber =
+    fibonacciArray[fibonacciArray.length - 2] +
+    fibonacciArray[fibonacciArray.length - 1];
+  fibonacciArray.push(newNumber);
+}
+console.log(fibonacciArray);
