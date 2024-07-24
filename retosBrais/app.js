@@ -1,6 +1,6 @@
-//!----------
-//? FIZZ BUZZ
-//!----------
+//!-------------
+//? #1 FIZZ BUZZ
+//!-------------
 /*
  * Escribe un programa que muestre por consola (con un print) los
  * números de 1 a 100 (ambos incluidos y con un salto de línea entre
@@ -21,9 +21,9 @@ for (let i = 1; i <= 100; i++)
     console.log(i);
   }
 
-//!----------
-//? FIZZ BUZZ
-//!----------
+//!------------
+//? #2 ANAGRAMA
+//!------------
 
 /*
  * Escribe una función que reciba dos palabras (String) y retorne
@@ -54,9 +54,9 @@ const anagramDetector = (string1, string2) => {
 areThisAnagram = anagramDetector("listen", "silent");
 console.log("🚀 ~ areThisAnagram:", areThisAnagram);
 
-//!------------------
-//? CONTANDO PALABRAS
-//!------------------
+//!---------------------
+//? #8 CONTANDO PALABRAS
+//!---------------------
 
 /*
  * Crea un programa que cuente cuantas veces se repite cada palabra
@@ -90,9 +90,9 @@ const wordCounter = (string) => {
 
 countedWords = wordCounter(mainText);
 
-//!----------
-//? FIBONACCI
-//!----------
+//!-------------
+//? #3 FIBONACCI
+//!-------------
 
 /*
  * Escribe un programa que imprima los 50 primeros números de la sucesión
@@ -111,3 +111,33 @@ while (fibonacciArray.length <= 50) {
   fibonacciArray.push(newNumber);
 }
 console.log(fibonacciArray);
+
+//!------------------
+//? #4 NÚMEROS PRIMOS
+//!------------------
+
+/*
+ * Escribe un programa que se encargue de comprobar si un número es o no primo.
+ * Hecho esto, imprime los números primos entre 1 y 100.
+ */
+
+const primeEvaluator = (number) => {
+  let isPrime = true;
+  if (number % 2 === 0) {
+    isPrime = false;
+  }
+  return isPrime;
+};
+
+const isThisPrime = primeEvaluator(4);
+console.log("🚀 ~ isThisPrime:", isThisPrime);
+
+const primesFromZeroToHundred = () => {
+  for (let i = 0; i <= 100; i++) {
+    if (primeEvaluator(i) === true) {
+      console.log(`${i} is prime`);
+    }
+  }
+};
+primesFromZeroToHundred();
+console.log("🚀 ~ primesFromZeroToHundred:", primesFromZeroToHundred);
