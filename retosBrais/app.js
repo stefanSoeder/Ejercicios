@@ -102,16 +102,19 @@ countedWords = wordCounter(mainText);
  *   0, 1, 1, 2, 3, 5, 8, 13...
  */
 
-let fibonacciArray = [0, 1];
+const fibonacciProgram = () => {
+  let fibonacciArray = [0, 1];
 
-while (fibonacciArray.length <= 50) {
-  let newNumber =
-    fibonacciArray[fibonacciArray.length - 2] +
-    fibonacciArray[fibonacciArray.length - 1];
-  fibonacciArray.push(newNumber);
-}
-console.log(fibonacciArray);
+  while (fibonacciArray.length <= 50) {
+    let newNumber =
+      fibonacciArray[fibonacciArray.length - 2] +
+      fibonacciArray[fibonacciArray.length - 1];
+    fibonacciArray.push(newNumber);
+  }
+  console.log(fibonacciArray);
+};
 
+fibonacciProgram();
 //!------------------
 //? #4 NÚMEROS PRIMOS
 //!------------------
@@ -140,4 +143,48 @@ const primesFromZeroToHundred = () => {
   }
 };
 primesFromZeroToHundred();
-console.log("🚀 ~ primesFromZeroToHundred:", primesFromZeroToHundred);
+
+//!-----------------------
+//? #5 ÁREA DE UN POLÍGONO
+//!-----------------------
+
+/*
+ * Crea una única función (importante que sólo sea una) que sea capaz
+ * de calcular y retornar el área de un polígono.
+ * - La función recibirá por parámetro sólo UN polígono a la vez.
+ * - Los polígonos soportados serán Triángulo, Cuadrado y Rectángulo.
+ * - Imprime el cálculo del área de un polígono de cada tipo.
+ */
+
+//!----------------
+//? #6 ASPECT RATIO
+//!----------------
+
+/*
+ * Crea un programa que se encargue de calcular el aspect ratio de una
+ * imagen a partir de una url.
+ * - Url de ejemplo:
+ *   https://raw.githubusercontent.com/mouredevmouredev/master/mouredev_github_profile.png
+ * - Por ratio hacemos referencia por ejemplo a los "16:9" de una
+ *   imagen de 1920*1080px.
+ */
+
+//!-----------------------
+//? #7 INVIRTIENDO CADENAS
+//!-----------------------
+
+/*
+ * Crea un programa que invierta el orden de una cadena de texto
+ * sin usar funciones propias del lenguaje que lo hagan de forma automática.
+ * - Si le pasamos "Hola mundo" nos retornaría "odnum aloH"
+ */
+
+const chainReverser = (string) => {
+  let reversedChain = "";
+  for (let i = string.length - 1; i >= 0; i--) {
+    reversedChain += string[i];
+  }
+  return reversedChain;
+};
+const reversedChainExample = chainReverser("prueba");
+console.log("🚀 ~ reversedChainExample:", reversedChainExample);
